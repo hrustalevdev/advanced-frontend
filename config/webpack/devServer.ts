@@ -6,6 +6,6 @@ export const getDevServerConfig = ({port}: IBuildOptions): DevServerConfig => {
   return {
     port,
     /** Будет автоматически открывать в браузере приложение */
-    open: true,
+    open: false,
   }
 }
