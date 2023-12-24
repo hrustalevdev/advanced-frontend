@@ -29,7 +29,7 @@ export const getWebpackConfig = (options: IBuildOptions): Configuration => {
     },
     plugins: getPlugins(options),
     module: {
-      rules: getLoaders(),
+      rules: getLoaders(options),
     },
     resolve: getResolvers(),
     devtool: isDev ? 'inline-source-map' : undefined,

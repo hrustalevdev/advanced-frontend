@@ -1,10 +1,13 @@
 import type { RuleSetRule } from 'webpack';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import { getCssDevIdent } from './lib/getCssDevIdent';
+import type { IBuildOptions } from './types/config';
 
 /**
  * Т.к. WP из коробки понимает только js, то для того, чтобы в `модулях` можно было работать с файлами других
  * типов, используются `лоадеры`.
  */
-export const getLoaders = (): RuleSetRule[] => {
+export const getLoaders = (options: IBuildOptions): RuleSetRule[] => {
   /** Лоадер для `typescript` */
   const typescriptLoader: RuleSetRule = {
     /** Регулярное выражение для определения типа файла который необходимо "пропустить" через лоадер. */
@@ -18,10 +21,19 @@ export const getLoaders = (): RuleSetRule[] => {
   }
 
   const sassLoader: RuleSetRule = {
-    test: /\.sсss$/i,
+    test: /\.scss$/i,
     use: [
-      'style-loader',
-      'css-loader',
+      options.isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
+      {
+        loader: 'css-loader',
+        options: {
+          modules: {
+            auto: true,
+            localIdentName: '[hash:base64:8]',
+            getLocalIdent: options.isDev ? getCssDevIdent : undefined,
+          }
+        }
+      },
       'sass-loader',
     ],
   }
