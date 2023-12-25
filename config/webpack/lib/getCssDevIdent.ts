@@ -8,7 +8,7 @@ export const getCssDevIdent = (context: webpack.LoaderContext<unknown>, localIde
   /** Создаём хэш, основанный на местоположении файла и имени класса. */
   const filePath = path.posix.relative(context.rootContext, context.resourcePath);
   const fileName = path.basename(context.resourcePath, '.module.scss');
-  const hash = hashGenerator.getHashFrom(filePath, fileName);
+  const hash = hashGenerator.getHashFrom(filePath, localName);
 
   return `${fileName}_${localName}__${hash}`;
 }

@@ -1,6 +1,7 @@
 import type { RuleSetRule } from 'webpack';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { getCssDevIdent } from './lib/getCssDevIdent';
+import { getCssProdIdent } from './lib/getCssProdIdent';
 import type { IBuildOptions } from './types/config';
 
 /**
@@ -29,8 +30,7 @@ export const getLoaders = (options: IBuildOptions): RuleSetRule[] => {
         options: {
           modules: {
             auto: true,
-            localIdentName: '[hash:base64:8]',
-            getLocalIdent: options.isDev ? getCssDevIdent : undefined,
+            getLocalIdent: options.isDev ? getCssDevIdent : getCssProdIdent,
           }
         }
       },

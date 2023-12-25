@@ -24,8 +24,10 @@ export class HashGenerator {
       .replace(/[^a-zA-Z0-9]/g, '')
       .slice(0, this.size);
 
-    /** Проверяем наличие коллизии. */
-    if (this.hashMap.has(hash)) {
+    /** Проверяем наличие коллизий - хеши для разных данных должны быть уникальными. */
+    const hasCollision = this.hashMap.has(hash) && this.hashMap.get(hash) !== hashedData;
+
+    if (hasCollision) {
       const hashSalt = Math.random().toString();
       return this.getHashFrom(hashedData, hashSalt);
     }
