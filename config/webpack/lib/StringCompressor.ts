@@ -13,7 +13,7 @@ export class StringCompressor {
 
   compress(string: string): string {
     if (this.idMap.has(string)) {
-      return this.idMap.get(string);
+      return this.idMap.get(string)!;
     }
 
     const id = this.idGenerator.getId();
