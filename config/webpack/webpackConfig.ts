@@ -31,7 +31,7 @@ export const getWebpackConfig = (options: IBuildOptions): Configuration => {
     module: {
       rules: getLoaders(options),
     },
-    resolve: getResolvers(),
+    resolve: getResolvers(options),
     devtool: isDev ? 'inline-source-map' : undefined,
     devServer: isDev ? getDevServerConfig(options) : undefined,
   }

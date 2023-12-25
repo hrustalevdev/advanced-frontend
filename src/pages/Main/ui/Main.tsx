@@ -1,5 +1,5 @@
 import React from 'react';
-import { cn } from '../../shared/lib/classNames';
+import { cn } from 'shared/lib/classNames';
 
 interface IMainProps extends React.HTMLAttributes<HTMLDivElement> {
   param?: string;
