@@ -7,7 +7,9 @@ export const Counter = () => {
   return (
     <>
       <h1>{count}</h1>
-      <button className={styles.btn} onClick={() => setCount(count + 1)}>Increment</button>
+      <div className={styles.btn}>
+        <button className={`${styles.red} ${styles.green}`} onClick={() => setCount(count + 1)}>Increment</button>
+      </div>
     </>
   )
 }
