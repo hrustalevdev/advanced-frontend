@@ -1,15 +1,16 @@
-import { Suspense, useState } from 'react';
+import { Suspense } from 'react';
 import { Link, Route, Routes } from 'react-router-dom';
 import { AboutAsync } from './pages/About';
 import { MainAsync } from './pages/Main';
 import { useTheme } from './providers/ThemeProvider';
+import { cn } from './shared/lib/classNames';
 import './styles/index.scss';
 
 export const App = () => {
   const {theme, toggleTheme} = useTheme();
 
   return (
-    <div className={`app ${theme}`}>
+    <div className={cn('app', theme)}>
       <Link to="/">MAIN</Link>
       <Link to="/about">ABOUT</Link>
       <div>
