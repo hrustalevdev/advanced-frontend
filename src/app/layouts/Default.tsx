@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom';
 import { cn } from 'shared/lib/classNames';
+import { Navbar } from 'widgets/Navbar';
 import { useTheme } from '../providers/ThemeProvider';
 import { Router } from '../router';
 
@@ -10,8 +10,7 @@ export const Default = () => {
 
   return (
     <div className={cn('app', theme)}>
-      <Link to="/">MAIN</Link>
-      <Link to="/about">ABOUT</Link>
+      <Navbar />
       <div>
         <button onClick={toggleTheme}>TOGGLE THEME</button>
       </div>
