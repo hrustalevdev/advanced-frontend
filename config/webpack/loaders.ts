@@ -44,7 +44,7 @@ export const getLoaders = (options: IBuildOptions): RuleSetRule[] => {
   }
 
   const imageLoader: RuleSetRule = {
-    test: /\.(png|svg|jpg|jpeg|gif)$/i,
+    test: /\.(png|jpg|jpeg|gif)$/i,
     type: 'asset/resource',
   }
 
