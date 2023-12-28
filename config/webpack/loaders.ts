@@ -38,8 +38,26 @@ export const getLoaders = (options: IBuildOptions): RuleSetRule[] => {
     ],
   }
 
+  const svgLoader: RuleSetRule = {
+    test: /\.svg$/i,
+    use: ['@svgr/webpack'],
+  }
+
+  const imageLoader: RuleSetRule = {
+    test: /\.(png|svg|jpg|jpeg|gif)$/i,
+    type: 'asset/resource',
+  }
+
+  const fontLoader: RuleSetRule = {
+    test: /\.(woff|woff2|eot|ttf|otf)$/i,
+    type: 'asset/resource',
+  }
+
   return [
     typescriptLoader,
     sassLoader,
+    svgLoader,
+    imageLoader,
+    fontLoader,
   ]
 }
