@@ -1,5 +1,6 @@
 import { cn } from 'shared/lib/classNames';
 import { Navbar } from 'widgets/Navbar';
+import { Sidebar } from 'widgets/Sidebar';
 import { useTheme } from '../providers';
 import { Router } from '../router';
 
@@ -11,7 +12,12 @@ export const Default = () => {
   return (
     <div className={cn('app', theme)}>
       <Navbar />
-      <Router />
+      <div className='page-content'>
+        <Sidebar />
+        <div className='page-wrapper'>
+          <Router />
+        </div>
+      </div>
     </div>
   )
 }

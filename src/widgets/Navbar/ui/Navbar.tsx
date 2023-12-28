@@ -10,12 +10,8 @@ type INavbarProps = HTMLAttributes<HTMLDivElement>
 export const Navbar: FC<INavbarProps> = ({className, ...rest}) => {
   return (
     <div className={cn(styles.wrapper, className)} {...rest}>
-      <ThemeSwitcher />
-
-      <div className={cn(styles.links)}>
-        <Link variant="secondary" to="/">MAIN</Link>
-        <Link variant="secondary" to="/about">ABOUT</Link>
-      </div>
+      <Link variant="secondary" to="/">MAIN</Link>
+      <Link variant="secondary" to="/about">ABOUT</Link>
     </div>
   )
 }
