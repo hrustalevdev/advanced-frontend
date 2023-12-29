@@ -1,15 +1,9 @@
-import React from 'react';
+import { useTranslation } from 'react-i18next';
 
-import styles from './About.module.scss';
+const About = () => {
+  const {t} = useTranslation('about');
 
-interface IAboutProps extends React.HTMLAttributes<HTMLDivElement> {
-  param?: string;
-}
-
-const About: React.FC<IAboutProps> = ({param, className, ...rest}) => {
-  console.log(param);
-
-  return <div className={className} {...rest}>ABOUT PAGE</div>;
+  return <div>{t('О сайте')}</div>;
 };
 
 export default About;

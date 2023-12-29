@@ -1,14 +1,10 @@
-import React from 'react';
-import { cn } from 'shared/lib/classNames';
+import { useTranslation } from 'react-i18next';
 
-interface IMainProps extends React.HTMLAttributes<HTMLDivElement> {
-  param?: string;
-}
 
-const Main: React.FC<IMainProps> = ({param, className, ...rest}) => {
-  console.log(param);
+const Main = () => {
+  const {t} = useTranslation('main');
 
-  return <div className={cn(className)} {...rest}>MAIN PAGE</div>;
+  return <div>{t('Главная страница')}</div>;
 };
 
 export default Main;

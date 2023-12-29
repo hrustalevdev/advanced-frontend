@@ -4,7 +4,7 @@ import styles from './Button.module.scss';
 
 type EVariants = 'primary' | 'secondary' | 'text';
 
-interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+export interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: EVariants;
 }
 
