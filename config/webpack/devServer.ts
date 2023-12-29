@@ -7,6 +7,7 @@ export const getDevServerConfig = ({port}: IBuildOptions): DevServerConfig => {
     port,
     /** Будет автоматически открывать в браузере приложение. */
     open: false,
+    hot: true,
     /** Для работы с роутингом в SPA. */
     historyApiFallback: true,
   }
