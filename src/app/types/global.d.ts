@@ -27,3 +27,5 @@ declare module "*.json" {
   const content: string;
   export = content;
 }
+
+declare const __IS_DEV__: boolean;

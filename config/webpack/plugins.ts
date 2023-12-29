@@ -4,7 +4,7 @@ import webpack from 'webpack';
 import type { WebpackPluginInstance } from 'webpack';
 import { IBuildOptions } from './types/config';
 
-export const getPlugins = ({paths}: IBuildOptions): WebpackPluginInstance[] => {
+export const getPlugins = ({paths, isDev}: IBuildOptions): WebpackPluginInstance[] => {
   return [
     /** Указываем куда вставить собранный `js` бандл. В данном случае за основу берём `index.html` из папки `public`. */
     new HtmlWebpackPlugin({
@@ -18,6 +18,10 @@ export const getPlugins = ({paths}: IBuildOptions): WebpackPluginInstance[] => {
       filename: "css/[name].[contenthash:8].css",
       chunkFilename: "css/[name].[contenthash:8].css",
       ignoreOrder: true
+    }),
+
+    new webpack.DefinePlugin({
+      __IS_DEV__: JSON.stringify(isDev),
     })
   ]
 }
