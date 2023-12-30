@@ -9,6 +9,28 @@ import type { IBuildOptions } from './types/config';
  * типов, используются `лоадеры`.
  */
 export const getLoaders = (options: IBuildOptions): RuleSetRule[] => {
+  const babelLoader: RuleSetRule = {
+    test: /\.[jt]sx?$/,
+    exclude: /node_modules/,
+    use: {
+      loader: 'babel-loader',
+      options: {
+        presets: [
+          ['@babel/preset-env'],
+        ],
+        plugins: [
+          [
+            'i18next-extract',
+            {
+              locales: ['ru', 'en'],
+              keyAsDefaultValue: true,
+            }
+          ]
+        ],
+      }
+    }
+  }
+
   /** Лоадер для `typescript` */
   const typescriptLoader: RuleSetRule = {
     /** Регулярное выражение для определения типа файла который необходимо "пропустить" через лоадер. */
@@ -54,6 +76,7 @@ export const getLoaders = (options: IBuildOptions): RuleSetRule[] => {
   }
 
   return [
+    babelLoader,
     typescriptLoader,
     sassLoader,
     svgLoader,
