@@ -15,21 +15,19 @@ export const getLoaders = (options: IBuildOptions): RuleSetRule[] => {
     use: {
       loader: 'babel-loader',
       options: {
-        presets: [
-          ['@babel/preset-env'],
-        ],
+        presets: [['@babel/preset-env']],
         plugins: [
           [
             'i18next-extract',
             {
               locales: ['ru', 'en'],
               keyAsDefaultValue: true,
-            }
-          ]
+            },
+          ],
         ],
-      }
-    }
-  }
+      },
+    },
+  };
 
   /** Лоадер для `typescript` */
   const typescriptLoader: RuleSetRule = {
@@ -41,7 +39,7 @@ export const getLoaders = (options: IBuildOptions): RuleSetRule[] => {
      */
     use: 'ts-loader',
     exclude: /node_modules/,
-  }
+  };
 
   const sassLoader: RuleSetRule = {
     test: /\.scss$/i,
@@ -53,27 +51,27 @@ export const getLoaders = (options: IBuildOptions): RuleSetRule[] => {
           modules: {
             auto: true,
             getLocalIdent: options.isDev ? getCssDevIdent : getCssProdIdent,
-          }
-        }
+          },
+        },
       },
       'sass-loader',
     ],
-  }
+  };
 
   const svgLoader: RuleSetRule = {
     test: /\.svg$/i,
     use: ['@svgr/webpack'],
-  }
+  };
 
   const imageLoader: RuleSetRule = {
     test: /\.(png|jpg|jpeg|gif)$/i,
     type: 'asset/resource',
-  }
+  };
 
   const fontLoader: RuleSetRule = {
     test: /\.(woff|woff2|eot|ttf|otf)$/i,
     type: 'asset/resource',
-  }
+  };
 
   return [
     babelLoader,
@@ -82,5 +80,5 @@ export const getLoaders = (options: IBuildOptions): RuleSetRule[] => {
     svgLoader,
     imageLoader,
     fontLoader,
-  ]
-}
+  ];
+};

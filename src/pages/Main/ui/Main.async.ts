@@ -1,4 +1,8 @@
 import { lazy } from 'react';
 
-// @ts-ignore
-export const MainAsync = lazy(() => new Promise((resolve) => setTimeout(() => resolve(import('./Main')), 1000) ));
+export const MainAsync = lazy(
+  () =>
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-expect-error
+    new Promise((resolve) => setTimeout(() => resolve(import('./Main')), 1000)),
+);

@@ -1,5 +1,5 @@
 import path from 'path';
-import { IBuildPaths, IEnv } from './config/webpack/types/config';
+import type { IBuildPaths, IEnv } from './config/webpack/types/config';
 import { getWebpackConfig } from './config/webpack/webpackConfig';
 
 

@@ -1,6 +1,7 @@
 import { LangSwitcher } from 'features/LangSwitcher/ui';
 import { ThemeSwitcher } from 'features/ThemeSwitcher';
-import { FC, HTMLAttributes, useCallback, useState } from 'react';
+import type { FC, HTMLAttributes} from 'react';
+import { useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { cn } from 'shared/lib/classNames';
 import { Button } from 'shared/ui/Button';

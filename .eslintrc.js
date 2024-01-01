@@ -7,6 +7,7 @@ module.exports = {
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:react/recommended',
+    'plugin:react/jsx-runtime',
     'prettier',
   ],
   overrides: [
@@ -26,7 +27,12 @@ module.exports = {
     sourceType: 'module',
   },
   plugins: ['@typescript-eslint', 'react'],
+  settings: {
+    react: {
+      version: 'detect',
+    },
+  },
   rules: {
-    'react/react-in-jsx-scope': 'off',
+    "@typescript-eslint/consistent-type-imports": "error"
   },
 };

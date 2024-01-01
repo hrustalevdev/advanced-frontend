@@ -14,13 +14,13 @@ export const Default = () => {
     <Suspense fallback={''}>
       <div className={cn('app', theme)}>
         <Navbar />
-        <div className='page-content'>
+        <div className="page-content">
           <Sidebar />
-          <div className='page-wrapper'>
+          <div className="page-wrapper">
             <Router />
           </div>
         </div>
       </div>
     </Suspense>
-  )
-}
+  );
+};

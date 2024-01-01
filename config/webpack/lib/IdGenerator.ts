@@ -5,7 +5,7 @@ export class IdGenerator {
   private id: string;
 
   constructor(basis: string = ALPHABET) {
-    this.basis = ALPHABET;
+    this.basis = basis;
     this.id = '';
   }
 

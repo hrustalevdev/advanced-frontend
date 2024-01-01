@@ -1,5 +1,6 @@
-import { FC } from 'react';
-import { Link as BaseLink, LinkProps } from 'react-router-dom';
+import type { FC } from 'react';
+import type { LinkProps } from 'react-router-dom';
+import { Link as BaseLink } from 'react-router-dom';
 import { cn } from '../../lib/classNames';
 
 import styles from './Link.module.scss';
