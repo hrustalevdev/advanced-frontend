@@ -1,5 +1,3 @@
-// TODO
-// eslint-disable-next-line react/no-deprecated
 import { render } from 'react-dom';
 import { App } from 'app/App';
 import '../config/i18n';
