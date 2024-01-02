@@ -7,8 +7,10 @@
     "start": "webpack serve --env port=3000 --env mode=development",
     "build:prod": "webpack --env mode=production",
     "build:dev": "webpack --env mode=development",
-    "lint": "eslint \"**/*.{ts,tsx}\"",
-    "lint:fix": "eslint \"**/*.{ts,tsx}\" --fix"
+    "lint:check": "eslint '**/*.{ts,tsx}'",
+    "lint:fix": "eslint '**/*.{ts,tsx}' --fix",
+    "format:check": "prettier '**/*.{ts,tsx}' --check",
+    "format:fix": "prettier '**/*.{ts,tsx}' --write"
   },
   "keywords": [],
   "author": "",
