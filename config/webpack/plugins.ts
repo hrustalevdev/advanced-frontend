@@ -1,8 +1,9 @@
-import webpack from 'webpack';
-import type { WebpackPluginInstance } from 'webpack';
 import ReactRefreshPlugin from '@pmmmwh/react-refresh-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import webpack from 'webpack';
+import type { WebpackPluginInstance } from 'webpack';
+
 import type { IBuildOptions } from './types/config';
 
 export const getPlugins = ({
@@ -31,7 +32,6 @@ export const getPlugins = ({
 
   if (isDev) {
     plugins.push(new ReactRefreshPlugin());
-    plugins.push(new webpack.HotModuleReplacementPlugin());
   }
 
   return plugins;

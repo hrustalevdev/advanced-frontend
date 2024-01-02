@@ -1,5 +1,6 @@
-import type { RuleSetRule } from 'webpack';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import type { RuleSetRule } from 'webpack';
+
 import { getCssDevIdent } from './lib/getCssDevIdent';
 import { getCssProdIdent } from './lib/getCssProdIdent';
 import type { IBuildOptions } from './types/config';

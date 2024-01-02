@@ -1,5 +1,7 @@
 import type { ButtonHTMLAttributes, FC } from 'react';
+
 import { cn } from '../../lib/classNames';
+
 import styles from './Button.module.scss';
 
 type EVariants = 'primary' | 'secondary' | 'text';

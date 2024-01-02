@@ -1,9 +1,11 @@
-import type { FC } from 'react';
 import { useCallback } from 'react';
+import type { FC } from 'react';
 import { useTranslation } from 'react-i18next';
+
 import { cn } from 'shared/lib/classNames';
-import type { IButtonProps } from 'shared/ui/Button';
 import { Button } from 'shared/ui/Button';
+import type { IButtonProps } from 'shared/ui/Button';
+
 import styles from './LangSwitcher.module.scss';
 
 type IProps = IButtonProps;

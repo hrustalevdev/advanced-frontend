@@ -7,13 +7,13 @@ import { Button } from 'shared/ui/Button';
 import styles from './ThemeSwitcher.module.scss';
 
 export const ThemeSwitcher = () => {
-  const {toggleTheme, theme} = useTheme();
+  const { toggleTheme, theme } = useTheme();
 
   const Icon = theme === ETheme.LIGHT ? LightIcon : DarkIcon;
 
   return (
-    <Button className={cn(styles.button)} variant='text' onClick={toggleTheme}>
+    <Button className={cn(styles.button)} variant="text" onClick={toggleTheme}>
       <Icon className={cn(styles.icon)} />
     </Button>
-  )
+  );
 };

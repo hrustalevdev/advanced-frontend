@@ -1,9 +1,10 @@
+import type { Configuration } from 'webpack';
+
 import { getDevServerConfig } from './devServer';
 import { getLoaders } from './loaders';
 import { getPlugins } from './plugins';
 import { getResolvers } from './resolvers';
 import type { IBuildOptions } from './types/config';
-import type { Configuration } from 'webpack';
 
 export const getWebpackConfig = (options: IBuildOptions): Configuration => {
   const { mode, paths, isDev } = options;

@@ -1,7 +1,8 @@
-import type { FC } from 'react';
 import { useCallback, useMemo, useState } from 'react';
-import type { IThemeContext } from './context';
+import type { FC } from 'react';
+
 import { ETheme, ThemeContext } from './context';
+import type { IThemeContext } from './context';
 
 const LOCAL_STORAGE_THEME_KEY = 'theme';
 const defaultTheme =
