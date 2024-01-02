@@ -13,11 +13,14 @@ interface ILinkProps extends LinkProps {
 }
 
 export const Link: FC<ILinkProps> = (props) => {
-  const {className, variant = 'primary', children, ...rest} = props;
+  const { className, variant = 'primary', children, ...rest } = props;
 
   return (
-    <BaseLink className={cn(className, styles.wrapper, styles[variant])} {...rest}>
+    <BaseLink
+      className={cn(className, styles.wrapper, styles[variant])}
+      {...rest}
+    >
       {children}
     </BaseLink>
-  )
+  );
 };

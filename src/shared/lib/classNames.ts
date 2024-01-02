@@ -16,4 +16,4 @@ export const cn = (...classes: className[]): string | undefined => {
   }, [] as string[]);
 
   return result.join(' ') || undefined;
-}
+};

@@ -3,7 +3,6 @@ import crypto from 'crypto';
 type THash = string;
 type THashedData = string;
 
-
 export class HashGenerator {
   private hashMap: Map<THash, THashedData>;
   private readonly size: number;
@@ -25,7 +24,8 @@ export class HashGenerator {
       .slice(0, this.size);
 
     /** Проверяем наличие коллизий - хеши для разных данных должны быть уникальными. */
-    const hasCollision = this.hashMap.has(hash) && this.hashMap.get(hash) !== hashedData;
+    const hasCollision =
+      this.hashMap.has(hash) && this.hashMap.get(hash) !== hashedData;
 
     if (hasCollision) {
       const hashSalt = Math.random().toString();

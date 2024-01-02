@@ -7,8 +7,10 @@ export const Router = () => {
   return (
     <Suspense fallback={<div>...loading</div>}>
       <Routes>
-        {config.map(({path, ...rest}) => <Route key={path} path={path} {...rest} />)}
+        {config.map(({ path, ...rest }) => (
+          <Route key={path} path={path} {...rest} />
+        ))}
       </Routes>
     </Suspense>
-  )
-}
+  );
+};

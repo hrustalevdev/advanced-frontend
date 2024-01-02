@@ -6,15 +6,19 @@ import { Link } from 'shared/ui/Link';
 
 import styles from './Navbar.module.scss';
 
-type INavbarProps = HTMLAttributes<HTMLDivElement>
+type INavbarProps = HTMLAttributes<HTMLDivElement>;
 
-export const Navbar: FC<INavbarProps> = ({className, ...rest}) => {
-  const {t} = useTranslation();
+export const Navbar: FC<INavbarProps> = ({ className, ...rest }) => {
+  const { t } = useTranslation();
 
   return (
     <div className={cn(styles.wrapper, className)} {...rest}>
-      <Link variant="secondary" to="/">{t('Главная')}</Link>
-      <Link variant="secondary" to="/about">{t('О нас')}</Link>
+      <Link variant="secondary" to="/">
+        {t('Главная')}
+      </Link>
+      <Link variant="secondary" to="/about">
+        {t('О нас')}
+      </Link>
     </div>
-  )
-}
+  );
+};

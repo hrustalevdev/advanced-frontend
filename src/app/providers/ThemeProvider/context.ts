@@ -2,11 +2,11 @@ import { createContext } from 'react';
 
 export enum ETheme {
   LIGHT = 'light',
-  DARK = 'dark'
+  DARK = 'dark',
 }
 
 export interface IThemeContext {
-  theme: ETheme | null
+  theme: ETheme | null;
   toggleTheme: () => void;
 }
 
