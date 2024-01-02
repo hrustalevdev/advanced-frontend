@@ -8,6 +8,7 @@ module.exports = {
     'plugin:import/recommended',
     'plugin:import/typescript',
     'plugin:@typescript-eslint/recommended',
+    'plugin:react-hooks/recommended',
     'plugin:react/recommended',
     'plugin:react/jsx-runtime',
     'prettier',
@@ -62,7 +63,11 @@ module.exports = {
     'import/order': [
       'error',
       {
-        alphabetize: { order: 'asc', orderImportKind: 'desc', caseInsensitive: true },
+        alphabetize: {
+          order: 'asc',
+          orderImportKind: 'desc',
+          caseInsensitive: true,
+        },
         'newlines-between': 'always',
         warnOnUnassignedImports: true,
         groups: [

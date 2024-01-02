@@ -15,7 +15,7 @@ export const LangSwitcher: FC<IProps> = ({ className, ...rest }) => {
 
   const changeLanguage = useCallback(() => {
     i18n.changeLanguage(i18n.language === 'en' ? 'ru' : 'en');
-  }, []);
+  }, [i18n]);
 
   return (
     <Button
