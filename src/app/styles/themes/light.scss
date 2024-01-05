@@ -1,11 +1,12 @@
 @use 'sass:color';
 
 .app.light {
-  --bg-color: #e8e8ea;
-  --bg-color-inverted: #0e0e75;
-
   --primary-color: #0232c2;
   --secondary-color: #0452ff;
   --primary-color-inverted: #049604;
   --secondary-color-inverted: #04ff04;
+
+  /* Background colors */
+  --bg-color: #e8e8ea;
+  --bg-color-inverted: #0e0e75;
 }
