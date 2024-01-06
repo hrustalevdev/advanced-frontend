@@ -1,10 +1,10 @@
 .wrapper {
-  width: 100%;
-  height: var(--navbar-height);
-  background-color: var(--bg-color-inverted);
   display: flex;
+  gap: 20px;
   align-items: center;
   justify-content: flex-end;
+  width: 100%;
+  height: var(--navbar-height);
   padding: 20px;
-  gap: 20px;
+  background-color: var(--bg-color-inverted);
 }

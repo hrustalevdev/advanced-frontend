@@ -6,8 +6,6 @@ import { cn } from 'shared/lib/classNames';
 import { Button } from 'shared/ui/Button';
 import type { IButtonProps } from 'shared/ui/Button';
 
-import styles from './LangSwitcher.module.scss';
-
 type IProps = IButtonProps;
 
 export const LangSwitcher: FC<IProps> = ({ className, ...rest }) => {
@@ -19,7 +17,7 @@ export const LangSwitcher: FC<IProps> = ({ className, ...rest }) => {
 
   return (
     <Button
-      className={cn(styles.wrapper, className)}
+      className={cn(className)}
       variant="text"
       onClick={changeLanguage}
       {...rest}
