@@ -1,5 +1,3 @@
-import { Suspense } from 'react';
-
 import { cn } from 'shared/lib/classNames';
 import { Navbar } from 'widgets/Navbar';
 import { Sidebar } from 'widgets/Sidebar';
@@ -12,16 +10,14 @@ export const Default = () => {
   const { theme } = useTheme();
 
   return (
-    <Suspense fallback={''}>
-      <div className={cn('app', theme)}>
-        <Navbar />
-        <div className="page-content">
-          <Sidebar />
-          <div className="page-wrapper">
-            <Router />
-          </div>
+    <div className={cn('app', theme)}>
+      <Navbar />
+      <div className="page-content">
+        <Sidebar />
+        <div className="page-wrapper">
+          <Router />
         </div>
       </div>
-    </Suspense>
+    </div>
   );
 };
