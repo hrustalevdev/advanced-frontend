@@ -10,11 +10,13 @@ export interface IBuildPaths {
 export interface IEnv {
   mode: UBuildMode;
   port: number;
+  analyze?: 'true';
 }
 
 export interface IBuildOptions {
   mode: UBuildMode;
   paths: IBuildPaths;
-  isDev: boolean;
   port: number;
+  isDev: boolean;
+  isAnalyze: boolean;
 }

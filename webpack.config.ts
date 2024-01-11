@@ -13,13 +13,14 @@ export default (env: IEnv) => {
 
   const mode = env.mode || 'development';
   const port = env.port || 3000;
-
   const isDev = mode === 'development';
+  const isAnalyze = env.analyze === 'true';
 
   return getWebpackConfig({
     mode,
     paths,
-    isDev,
     port,
+    isDev,
+    isAnalyze,
   });
 };
