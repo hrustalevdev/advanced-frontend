@@ -1,4 +1,8 @@
 {
+  "include": [
+    "src/**/*",
+    "config/jest/jest-setup.ts"
+  ],
   "compilerOptions": {
     "outDir": "./dist/",
     "noImplicitAny": true,
