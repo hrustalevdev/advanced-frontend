@@ -1,30 +1,37 @@
-import { Configuration } from 'webpack';
-import { buildDevServer } from './build-dev-server';
-import { buildLoaders } from './build-loaders';
-import { buildPlugins } from './build-plugins';
-import { buildResolvers } from './build-resolvers';
+import { Configuration } from "webpack";
+import { buildDevServer } from "./build-dev-server";
+import { buildLoaders } from "./build-loaders";
+import { buildPlugins } from "./build-plugins";
+import { buildResolvers } from "./build-resolvers";
 
-export function createWebpackConfig({mode, paths, port}: {
-  mode: 'development' | 'production',
-  paths: { entry: string; output: string; html: string; }
-  port: number | string,
+export type Mode = "development" | "production";
+export type Port = string | number;
+
+export function createWebpackConfig({
+  mode,
+  paths,
+  port,
+}: {
+  mode: Mode;
+  paths: { entry: string; output: string; html: string };
+  port: Port;
 }): Configuration {
-  const isDev = mode === 'development';
+  const isDev = mode === "development";
 
   return {
     mode,
     entry: paths.entry,
     output: {
-      filename: '[name].[contenthash].js',
+      filename: "[name].[contenthash].js",
       path: paths.output,
       clean: true,
     },
-    plugins: buildPlugins({htmlPath: paths.html}),
+    plugins: buildPlugins({ htmlPath: paths.html }),
     module: {
-      rules: buildLoaders(),
+      rules: buildLoaders({ mode }),
     },
     resolve: buildResolvers(),
-    devtool: isDev ? 'inline-source-map' : undefined,
-    devServer: isDev ? buildDevServer({port}) : undefined,
-  }
+    devtool: isDev ? "inline-source-map" : undefined,
+    devServer: isDev ? buildDevServer({ port }) : undefined,
+  };
 }
