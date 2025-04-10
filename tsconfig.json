@@ -3,7 +3,7 @@
     "outDir": "./dist/",
     "module": "ESNext",
     "target": "ES5",
-    "jsx": "react",
+    "jsx": "react-jsx",
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,

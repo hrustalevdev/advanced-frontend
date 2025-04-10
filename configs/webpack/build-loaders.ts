@@ -8,8 +8,21 @@ export function buildLoaders(): RuleSetRule[] {
     exclude: /node_modules/,
   }
 
-  /** Порядок лоадеров имеет значение! Порядок выполнения лоадеров - снизу вверх! */
+  const stylesLoader: RuleSetRule = {
+    test: /\.s[ac]ss$/i,
+    /** Порядок лоадеров имеет значение! Порядок выполнения лоадеров - снизу вверх! */
+    use: [
+      /** Создаёт `style`-тег в HTML и добавляет в него CSS из JS-бандла */
+      'style-loader',
+      /** Преобразовывает CSS в строку и добавляет в JS */
+      'css-loader',
+      /** Преобразует Sass в CSS */
+      'sass-loader',
+    ],
+  }
+
   return [
     typescriptLoader,
+    stylesLoader,
   ]
 }
