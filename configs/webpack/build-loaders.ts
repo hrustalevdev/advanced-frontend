@@ -1,6 +1,10 @@
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import { RuleSetRule } from "webpack";
 import { Mode } from "./create-webpack-config";
+import {
+  getCssClassIdentDev,
+  getCssClassIdentProd,
+} from "./lib/getCssClassIdent";
 
 /** Возвращает массив лоадеров для обработки файлов отличных от JS */
 export function buildLoaders({ mode }: { mode: Mode }): RuleSetRule[] {
@@ -28,7 +32,21 @@ export function buildLoaders({ mode }: { mode: Mode }): RuleSetRule[] {
     /** Порядок лоадеров имеет значение! Порядок выполнения лоадеров - снизу вверх! */
     use: [
       isDev ? "style-loader" : MiniCssExtractPlugin.loader,
-      "css-loader",
+      {
+        loader: "css-loader",
+        options: {
+          modules: {
+            /** Автоматически применяется для всех файлов содержащих `.module.` в имени */
+            auto: true,
+            /** Для дефолтного импорта CSS-модулей */
+            namedExport: false,
+            /** Имена классов будут экспортированы как есть */
+            exportLocalsConvention: "as-is",
+            localIdentName: "[name]_[local]__[hash:base64:8]",
+            getLocalIdent: isDev ? getCssClassIdentDev : getCssClassIdentProd,
+          },
+        },
+      },
       "sass-loader",
     ],
   };

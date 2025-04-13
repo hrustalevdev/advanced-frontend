@@ -26,7 +26,7 @@ export function createWebpackConfig({
       path: paths.output,
       clean: true,
     },
-    plugins: buildPlugins({ htmlPath: paths.html }),
+    plugins: buildPlugins({ mode, htmlPath: paths.html }),
     module: {
       rules: buildLoaders({ mode }),
     },
