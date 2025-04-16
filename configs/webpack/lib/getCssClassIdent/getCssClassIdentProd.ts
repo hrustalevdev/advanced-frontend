@@ -43,10 +43,3 @@ function _convertToCharsetRadix(number: number): string {
 
   return result;
 }
-
-console.log(
-  new Array(1000)
-    .fill(0)
-    .map((_, i) => _convertToCharsetRadix(i))
-    .join(","),
-);

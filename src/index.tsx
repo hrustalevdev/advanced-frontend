@@ -1,5 +1,5 @@
 import { createRoot } from "react-dom/client";
-import { Counter } from "./components/Counter";
+import { Counter } from "./shared/ui/counter";
 import { assertExist } from "./shared/lib/assert-exist";
 
 const container = document.getElementById("root");
