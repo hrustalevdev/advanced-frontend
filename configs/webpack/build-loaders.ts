@@ -42,7 +42,6 @@ export function buildLoaders({ mode }: { mode: Mode }): RuleSetRule[] {
             namedExport: false,
             /** Имена классов будут экспортированы как есть */
             exportLocalsConvention: "as-is",
-            localIdentName: "[name]_[local]__[hash:base64:8]",
             getLocalIdent: isDev ? getCssClassIdentDev : getCssClassIdentProd,
           },
         },
