@@ -28,7 +28,7 @@ export function buildLoaders({ mode }: { mode: Mode }): RuleSetRule[] {
    * * `sass-loader` - преобразует Sass в CSS
    */
   const stylesLoader: RuleSetRule = {
-    test: /\.s[ac]ss$/i,
+    test: /\.s?css$/i,
     /** Порядок лоадеров имеет значение! Порядок выполнения лоадеров - снизу вверх! */
     use: [
       isDev ? "style-loader" : MiniCssExtractPlugin.loader,
